@@ -226,7 +226,7 @@ class TestSession {
               .index()
               .unsigned()
               .references('Model1.id')
-              .onDelete('SET NULL');
+              .onDelete(opt.knexConfig.client == 'mssql' ? 'NO ACTION' : 'SET NULL');
             table.string('model1Prop1');
             table.integer('model1Prop2');
           })

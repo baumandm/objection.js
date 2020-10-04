@@ -48,6 +48,14 @@ describe('integration tests', () => {
         user: 'objection',
         database: 'objection_test'
       }
+    },
+    {
+      client: 'mssql',
+      connection: {
+        host: 'localhost',
+        user: 'objection',
+        database: 'objection_test'
+      }
     }
   ].filter(it => {
     return DATABASES.length === 0 || DATABASES.includes(it.client);

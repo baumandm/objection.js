@@ -15,3 +15,11 @@ services:
       - '3306:3306'
     environment:
       - 'MYSQL_ALLOW_EMPTY_PASSWORD=yes'
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    container_name: 'objection_mssql'
+    ports:
+      - '1433:1433'
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=yourStrong(!)Password
